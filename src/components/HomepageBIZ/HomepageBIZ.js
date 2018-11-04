@@ -59,6 +59,7 @@ class HomepageBIZ extends Component {
           <div className="hpb-listings-container">
             <div className="hpb-listings-scroll-container">
               <JobListing listing={this.state.listing}/>
+              <div className="hpb-50px-space"></div>
               <WorkerListing/>
               <WorkerListing/>
               <WorkerListing/>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './WorkerListing.css';
 
+import YouTube from 'react-youtube';
+
 class WorkerListing extends Component {
 
   constructor() {
@@ -22,6 +24,31 @@ class WorkerListing extends Component {
 
 
   // Render --------------------------------------------------------------------
+
+
+  renderYoutubeVideo = () => {
+    const opts = {
+      height: '270', // 390
+      width: '550', // 640
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    };
+
+    return (
+      <YouTube
+        videoId="2g811Eo7K8U"
+        opts={opts}
+        onReady={this._onReady}
+      />
+    );
+  }
+
+  _onReady(event) {
+     // access to player in all event handlers via event.target
+     event.target.pauseVideo();
+   }
+
 
   render() {
     let profile = this.state.worker;
@@ -61,9 +88,7 @@ class WorkerListing extends Component {
 
         {/* right half: video */}
         <div className="worker-listing-right-half-container">
-          <div className="wl-video-container">
-
-          </div>
+          {this.renderYoutubeVideo()}
         </div>
       </div>
     );
