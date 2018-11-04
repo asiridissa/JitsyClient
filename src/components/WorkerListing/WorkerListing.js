@@ -7,19 +7,6 @@ class WorkerListing extends Component {
 
   constructor() {
     super();
-
-    let sample_worker = {
-      name: "Darren Dawson",
-      review_score: " ★ ★ ★ ☆ ☆ ",
-      profile_img: "https://avatars1.githubusercontent.com/u/12383469?s=400&v=4",
-      bio: "I am a self-starting worker who is flexible and can adapt to your workplace. I have managerial experience at Carl's Jr and worked as a barista at Starbucks before that. ",
-      skills: ["skill 1", "skill 2", "skill 3", "skill 4"],
-      num_jobs: "15 successful jobs"
-    };
-
-    this.state = {
-      worker: sample_worker
-    }
   }
 
 
@@ -51,7 +38,7 @@ class WorkerListing extends Component {
 
 
   render() {
-    let profile = this.state.worker;
+    let profile = this.props.worker;
 
     // get skills
     let skills = [];

@@ -48,7 +48,7 @@ class JobListing extends Component {
       return (
         <div className="jl-listing-status-container">
           <div className="jl-update-container">
-            <button className="jl-update-button">Update</button>
+            <button className="jl-update-button" onClick={this.props.updateClick}>Update</button>
             <h2 className="jl-live-status-description">status: <span id="jl-live-status">{listing.status}</span></h2>
           </div>
         </div>

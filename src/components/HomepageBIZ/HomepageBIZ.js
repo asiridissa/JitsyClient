@@ -21,6 +21,44 @@ const EMPTY_LISTING = {
 };
 
 
+// DATA ------------------------------------------------------------------------
+
+const user1 = {
+  name: "Darren Dawson",
+  review_score: " ★ ★ ★ ☆ ☆ ",
+  profile_img: "https://avatars1.githubusercontent.com/u/12383469?s=400&v=4",
+  bio: "I am a self-starting worker who is flexible and can adapt to your workplace. I have managerial experience at Carl's Jr and worked as a barista at Starbucks before that. ",
+  skills: ["Leadership", "Swimming", "Teaching"],
+  num_jobs: "15 successful jobs"
+}
+
+const user2 = {
+  name: "Collin Hurst",
+  review_score: " ★ ★ ★ ★ ☆ ",
+  profile_img: "https://avatars1.githubusercontent.com/u/29928221?s=400&v=4",
+  bio: "I am Collin and Midtown got fired by me ",
+  skills: ["Athletic", "Swimming", "Lifeguard Certified"],
+  num_jobs: "7 successful jobs"
+}
+
+const user3 = {
+  name: "Vaughn Fisher",
+  review_score: " ★ ★ ★ ★ ★ ",
+  profile_img: "https://media.licdn.com/dms/image/C5603AQF7-uqW8hiERA/profile-displayphoto-shrink_200_200/0?e=1547078400&v=beta&t=lsKP9ufIzsAZfEKUy9gWwVjd-UGhcN9Odnl2mbHK-7k",
+  bio: "I am a swim teacher part time! ",
+  skills: ["Athletic", "CPR Certified", "Swimming", "Lifeguard Certified"],
+  num_jobs: "10 successful jobs"
+}
+
+const user_final = {
+  name: "Rohan Sachdeva",
+  review_score: " ★ ★ ★ ★ ★ ",
+  profile_img: "https://media.licdn.com/dms/image/C5603AQFJB52jXCx1ww/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=0Syeo_9jY2f1ORGfwoLB618wFcL-92OWPk9gySSFTfc",
+  bio: "Hello! ",
+  skills: ["CPR Certified", "Swimming", "Athletic", "friendly", "Lifeguard Certified"],
+  num_jobs: "12 successful jobs"
+}
+
 class HomepageBIZ extends Component {
 
   constructor() {
@@ -70,7 +108,8 @@ class HomepageBIZ extends Component {
       company_name: "Just in Time Swimming",
 
       new_listing: EMPTY_LISTING,
-      listings: listings
+      listings: listings,
+      final_active: false
     };
   }
 
@@ -146,6 +185,13 @@ class HomepageBIZ extends Component {
   onClick_CloseViewWorker = () => {
     this.setState({view_worker_active: false});
   }
+
+  // update
+  onClick_Update = () => {
+    this.setState({final_active: true});
+  }
+
+
   // Update Info ---------------------------------------------------------------
 
   // updates info in new listing
@@ -217,10 +263,22 @@ class HomepageBIZ extends Component {
     for (let i = 0; i < this.state.listings.length; i++) {
 
       if (!this.state.listings[i]['completed']) {
-        results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
+        results.push(<JobListing listing={this.state.listings[i]['listing']} updateClick={this.onClick_Update}/>);
 
-        for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
-          results.push(<WorkerListing openViewWorker={this.onClick_OpenViewWorker}/>);
+        let user;
+        if (this.state.final_active && i === 0) {
+          results.push(<WorkerListing worker={user_final} openViewWorker={this.onClick_OpenViewWorker}/>);
+        } else {
+          for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
+            if (j === 0) {
+              user = user3;
+            } else if (j === 1) {
+              user = user2;
+            } else if (j === 2) {
+              user = user1;
+            }
+            results.push(<WorkerListing worker={user} openViewWorker={this.onClick_OpenViewWorker}/>);
+          }
         }
         results.push(<div className="hpb-50px-space"></div>);
         results.push(<div className="hpb-50px-space"></div>);
