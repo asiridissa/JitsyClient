@@ -22,9 +22,10 @@ class WorkerListing extends Component {
       }
     };
 
+    // videoId={this.props.worker. video_id}
     return (
       <YouTube
-        videoId="2g811Eo7K8U"
+        videoId="test"
         opts={opts}
         onReady={this._onReady}
       />

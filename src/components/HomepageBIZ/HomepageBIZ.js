@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './HomepageBIZ.css';
 
+//
 
 // componenents
 import JobListing from '../JobListing/JobListing.js';
 import WorkerListing from '../WorkerListing/WorkerListing.js';
 import NewJobListingForm from '../NewJobListingForm/NewJobListingForm.js';
 import ViewWorker from '../ViewWorker/ViewWorker.js';
+
+import Requests from '../../network/requests.js';
+var requests = new Requests();
 
 const EMPTY_LISTING = {
   job_title: "",
@@ -33,13 +37,14 @@ const user1 = {
   num_jobs: "15 successful jobs"
 }
 
-const user2 = {
+const user_final = {
   name: "Collin Hurst",
   review_score: " ★ ★ ★ ★ ☆ ",
   profile_img: "https://avatars1.githubusercontent.com/u/29928221?s=400&v=4",
   bio: "I am Collin and Midtown got fired by me ",
   skills: ["Athletic", "Swimming", "Lifeguard Certified"],
-  num_jobs: "7 successful jobs"
+  num_jobs: "7 successful jobs",
+  video_id: "4NbqN5GBIJo"
 }
 
 const user3 = {
@@ -51,13 +56,14 @@ const user3 = {
   num_jobs: "10 successful jobs"
 }
 
-const user_final = {
+const user2 = {
   name: "Rohan Sachdeva",
   review_score: " ★ ★ ★ ★ ★ ",
   profile_img: "https://media.licdn.com/dms/image/C5603AQFJB52jXCx1ww/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=0Syeo_9jY2f1ORGfwoLB618wFcL-92OWPk9gySSFTfc",
   bio: "Hello! ",
   skills: ["CPR Certified", "Swimming", "Athletic", "friendly", "Lifeguard Certified"],
-  num_jobs: "12 successful jobs"
+  num_jobs: "12 successful jobs",
+  video_id: "C4BI-COi3g8"
 }
 
 class HomepageBIZ extends Component {
@@ -68,7 +74,7 @@ class HomepageBIZ extends Component {
     // fake data for company job listing
     let listing1 = {
       job_title: "Lifeguard",
-      company_name: "Just in Time Swimming",
+      company_name: "Swim School",
       start_time: "4:00",
       end_time: "8:30",
       date: "8/24",
@@ -83,7 +89,7 @@ class HomepageBIZ extends Component {
 
     let listing2 = {
       job_title: "Lifeguard",
-      company_name: "Just in Time Swimming",
+      company_name: "Swim School",
       start_time: "4:00",
       end_time: "8:30",
       date: "8/24",
@@ -106,7 +112,7 @@ class HomepageBIZ extends Component {
     this.state = {
       new_form_active: false,
       view_worker_active: false,
-      company_name: "Just in Time Swimming",
+      company_name: "Swim School",
 
       new_listing: EMPTY_LISTING,
       listings: listings,
@@ -173,6 +179,9 @@ class HomepageBIZ extends Component {
     let allListings = this.state.listings;
     allListings.unshift({listing: newListing, workers: []});
     this.setState({listings: allListings, new_listing: EMPTY_LISTING, new_form_active: false});
+
+
+    requests.makeNexmoLink()
   }
 
 

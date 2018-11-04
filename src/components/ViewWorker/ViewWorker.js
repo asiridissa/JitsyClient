@@ -7,22 +7,22 @@ class ViewWorker extends Component {
   constructor() {
     super();
 
-    let review1 = {title: "title", company: "company", "score": " ★ ★ ★ ☆ ☆ ", content: "this is the review!"};
-    let review2 = {title: "t2", company: "c2", score: " ★ ★ ★ ★ ☆ ", content: "review #2"};
+    let review1 = {title: "Great Worker!", company: "The Coffee Shop", "score": " ★ ★ ★ ★ ★ ", content: "Collin really put the extra effort into making coffee"};
+    let review2 = {title: "An OK Worker!", company: "The Tea Shop", score: " ★ ★ ★ ★ ☆ ", content: "He did his work and we had no problems"};
     let reviews = [review1, review2];
 
-    let experience1 = {title: "job title", company: "company name", description: "description of what was done"};
-    let experience2 = {title: "job title #2", company: "company name #2", description: "description #2"};
+    let experience1 = {title: "Lifeguard", company: "The Swimming Company", description: "He made sure no one actually drowned"};
+    let experience2 = {title: "Barista", company: "Midtown", description: "Did he work here?"};
     let experience = [experience1, experience2];
 
     let worker = {
-      name: "Darren Dawson",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      review_score: " ★ ★ ★ ☆ ☆ ",
-      skills: ["skill 1", "skill 2"],
-      profile_img: "https://avatars1.githubusercontent.com/u/12383469?s=400&v=4",
-      num_jobs: "15 successful jobs",
-      video_id: "2g811Eo7K8U",
+      name: "Collin Hurst",
+      bio: "I am Collin; Midtown got fired by me.",
+      review_score: " ★ ★ ★ ★ ☆ ",
+      skills: ["Athletic", "Swimming", "Lifeguard Certified"],
+      profile_img: "https://avatars1.githubusercontent.com/u/29928221?s=400&v=4",
+      num_jobs: "7 successful jobs",
+      video_id: "snh-E-lQbMQ",
       reviews: reviews,
       experience: experience
     };
@@ -55,7 +55,10 @@ class ViewWorker extends Component {
         </div>
 
         <div className="vw-description-column">
-          <h1 id="vw-name-h1">{worker.name}</h1>
+          <div className="open-link-bar">
+            <h1 id="vw-name-h1">{worker.name}</h1>
+            <a className="open-link-button" href="http://localhost:34163">Call</a>
+          </div>
           <h1 id="vw-num-jobs">{worker.num_jobs} - <span id="vw-review-stars">{worker.review_score}</span></h1>
           <p id="vw-bio">{worker.bio}</p>
 

@@ -5,10 +5,10 @@ class Requests {
 
   // Get From Database ---------------------------------------------------------
 
-  async getListings() {
-    let url = "https://jitsy.horokuapp.com/listing";
+  async makeNexmoLink() {
+    let url = "https://jitsy.horokuapp.com/nexmo";
 
-    fetch("https://github.com")
+    fetch(url)
     .then(function(response) {
       return response.json();
     })
