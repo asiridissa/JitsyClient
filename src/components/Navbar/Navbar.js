@@ -17,8 +17,8 @@ class Navbar extends Component {
         </div>
 
         <div className="nb-side-container">
-          <h2 className="nb-h2">Link 1</h2>
-          <h2 className="nb-h2">Link 2</h2>
+          <h2 className="nb-h2" onClick={this.props.clickBusiness}>Business</h2>
+          <h2 className="nb-h2" onClick={this.props.clickWorker}>Worker</h2>
         </div>
       </div>
     );

@@ -6,22 +6,61 @@ import './App.css';
 import Homepage from './components/Homepage/Homepage.js';
 import Navbar from './components/Navbar/Navbar.js';
 import HomepageBIZ from './components/HomepageBIZ/HomepageBIZ.js';
+import HomepageWORKER from './components/HomepageWORKER/HomepageWORKER.js';
 
 class App extends Component {
 
 
+  constructor() {
+    super();
+
+    this.state = {
+      business_active: true
+    };
+  }
+
+
+  // On Click ------------------------------------------------------------------
+
+  onClick_SetBusinessActive = () => {
+    this.setState({business_active: true});
+  }
+
+  onClick_SetBusinessInActive = () => {
+    this.setState({business_active: false});
+  }
+
+  // Render --------------------------------------------------------------------
+
+
   render() {
-    return (
 
-      <div className="App">
-        <Navbar/>
-
-        <div className="app-content-container">
-          <HomepageBIZ/>
+    if (this.state.business_active) {
+      return (
+        <div className="App">
+          <Navbar
+            clickBusiness={this.onClick_SetBusinessActive}
+            clickWorker={this.onClick_SetBusinessInActive}
+          />
+          <div className="app-content-container">
+            <HomepageBIZ/>
+          </div>
         </div>
-        {/* <Homepage/> */}
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="App">
+          <Navbar
+            clickBusiness={this.onClick_SetBusinessActive}
+            clickWorker={this.onClick_SetBusinessInActive}
+          />
+          <div className="app-content-container">
+            <HomepageWORKER/>
+          </div>
+        </div>
+      );
+    }
+
   }
 }
 
