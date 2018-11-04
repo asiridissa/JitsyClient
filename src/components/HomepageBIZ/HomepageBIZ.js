@@ -41,9 +41,24 @@ class HomepageBIZ extends Component {
       skills: ["Swimming", "Coaching", "Lifeguard Certified"]
     };
 
+    let listing2 = {
+      job_title: "Lifeguard",
+      company_name: "Just in Time Swimming",
+      start_time: "4:00",
+      end_time: "8:30",
+      date: "8/24",
+      status: "completed",
+      wage: 15,
+
+      photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
+      location: "2600 Marine Way, Mountain View, Ca, 94043",
+      description: "We need someone to make sure no more kids drown. ",
+      skills: ["Swimming", "Coaching", "Lifeguard Certified"]
+    };
+
     let listings = [];
-    listings.push({listing: listing1, workers: [0, 1, 2]});
-    listings.push({listing: listing1, workers: [0]});
+    listings.push({listing: listing1, workers: [0, 1, 2], completed: false});
+    listings.push({listing: listing2, workers: [0], completed: true});
 
 
 
@@ -109,6 +124,8 @@ class HomepageBIZ extends Component {
     let skillsList = newListing.skills.split(",");
     newListing['skills'] = skillsList;
     newListing['status'] = "live";
+    newListing['location'] = "2600 Marine Way, Mountain View, Ca, 94043";
+
 
     // add to other listings
     let allListings = this.state.listings;
@@ -181,25 +198,55 @@ class HomepageBIZ extends Component {
 
 
   // renders the job listings
-  renderJobListings = () => {
+  renderLiveJobListings = () => {
     let results = [];
 
     for (let i = 0; i < this.state.listings.length; i++) {
-      results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
 
-      for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
-        results.push(<WorkerListing/>);
+      if (!this.state.listings[i]['completed']) {
+        results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
+
+        for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
+          results.push(<WorkerListing/>);
+        }
+        results.push(<div className="hpb-50px-space"></div>);
+        results.push(<div className="hpb-50px-space"></div>);
+        results.push(<div className="hpb-50px-space"></div>);
       }
-      results.push(<div className="hpb-50px-space"></div>);
-      results.push(<div className="hpb-50px-space"></div>);
-      results.push(<div className="hpb-50px-space"></div>);
-
     }
 
     return results
   }
 
 
+  // renders job listings that have already completed
+  renderCompletedListings = () => {
+    let results = [];
+
+    for (let i = 0; i < this.state.listings.length; i++) {
+      if (this.state.listings[i]['listing']['status'] === "completed") {
+        results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
+      }
+    }
+
+
+    results.push(<div className="hpb-50px-space"></div>);
+    results.push(<div className="hpb-50px-space"></div>);
+    results.push(<div className="hpb-50px-space"></div>);
+
+    return results;
+  }
+
+
+  renderBorderTitle = (title) => {
+    return (
+      <div className="hpb-border-title-container">
+        <div className="hpb-border-left"></div>
+        <h1 className="hpb-border-title-h1">{title}</h1>
+        <div className="hpb-border-right"></div>
+      </div>
+    );
+  }
 
   // renders <HomepageBIZ/>
   render() {
@@ -219,7 +266,12 @@ class HomepageBIZ extends Component {
               {this.renderNewJobListingForm()}
 
               {/* Job listings */}
-              {this.renderJobListings()}
+              {this.renderBorderTitle("Live Listings")}
+              {this.renderLiveJobListings()}
+
+              {/* Renders completed job listings */}
+              {this.renderBorderTitle("Completed Listings")}
+              {this.renderCompletedListings()}
             </div>
           </div>
 

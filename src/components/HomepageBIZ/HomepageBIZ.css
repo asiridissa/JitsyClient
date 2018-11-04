@@ -16,6 +16,36 @@
   height: 30px;
 }
 
+/* Border Title --------------------------------------------------------------*/
+
+.hpb-border-title-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.hpb-border-title-h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2.7em;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #004961;
+}
+
+.hpb-border-left {
+  width: 200px;
+  height: 2px;
+  background-color: #004961;
+}
+
+.hpb-border-right {
+  background-color: #004961;
+  height: 2px;
+  flex-grow: 1;
+}
+
 /* Command Bar ---------------------------------------------------------------*/
 
 
