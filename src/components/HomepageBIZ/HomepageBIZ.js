@@ -69,6 +69,26 @@ class HomepageBIZ extends Component {
     });
   }
 
+  onClick_CancelListing = () => {
+
+    const EMPTY_LISTING = {
+      job_title: "",
+      company_name: "",
+      start_time: "",
+      end_time: "",
+      date: "",
+      wage: "15.00",
+      description: "",
+      skills: "",
+      photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
+      description: "",
+    };
+
+    this.setState({
+      new_form_active: false,
+      new_listing: EMPTY_LISTING
+    });
+  }
   // publish new listing
   onClick_PublishNewListing = () => {
 
@@ -135,8 +155,10 @@ class HomepageBIZ extends Component {
 
     // get right button
     let button;
+    let cancelButton;
     if (this.state.new_form_active) {
       button = <button id="new-listing-button" onClick={this.onClick_PublishNewListing}>Publish Job</button>;
+      cancelButton = <button id="cancel-listing-button" onClick={this.onClick_CancelListing}>Cancel</button>
     } else {
       button = <button id="new-listing-button" onClick={this.onClick_ToggleNewFormActive}>New Job Listing</button>;
     }
@@ -148,7 +170,11 @@ class HomepageBIZ extends Component {
         <div>
           <h1 className="hbp-h1">{this.state.company_name}</h1>
         </div>
-        {button}
+        <div>
+          {cancelButton}
+          {button}
+        </div>
+
       </div>
     );
   }
