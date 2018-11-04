@@ -139,22 +139,3 @@ class NewJobListingForm extends Component {
 }
 
 export default NewJobListingForm;
-
-
-/*
-// updates input value in searchParameters in parent component
-updateInputValue = (value, parameterCategory, parameterType) => {
-  console.log(value);
-  let inputValue = this.props.searchParameters[parameterCategory][parameterType];
-
-  this.props.updateSearchParameters(value, parameterCategory, parameterType);
-}
-
-
-<input
-  className={studioNameCSS}
-  value={studioValue}
-  placeholder="Your Studio Name"
-  onChange={evt => this.updateInputValueNoParameterType(evt.target.value, this.props.studioNameTag)}
-/>
-*/

@@ -6,6 +6,20 @@ import JobListing from '../JobListing/JobListing.js';
 import WorkerListing from '../WorkerListing/WorkerListing.js';
 import NewJobListingForm from '../NewJobListingForm/NewJobListingForm.js';
 
+const EMPTY_LISTING = {
+  job_title: "",
+  company_name: "",
+  start_time: "",
+  end_time: "",
+  date: "",
+  wage: "15.00",
+  description: "",
+  skills: "",
+  photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
+  description: "",
+};
+
+
 class HomepageBIZ extends Component {
 
   constructor() {
@@ -14,6 +28,7 @@ class HomepageBIZ extends Component {
     // fake data for company job listing
     let listing1 = {
       job_title: "Lifeguard",
+      company_name: "Just in Time Swimming",
       start_time: "4:00",
       end_time: "8:30",
       date: "8/24",
@@ -27,27 +42,18 @@ class HomepageBIZ extends Component {
     };
 
     let listings = [];
-    listings.push(listing1);
-    listings.push(listing1);
+    listings.push({listing: listing1, workers: [0, 1, 2]});
+    listings.push({listing: listing1, workers: [0]});
 
 
-    let empty_listing = {
-      job_title: "Test",
-      start_time: "",
-      end_time: "",
-      date: "",
-      wage: "15.00",
-      description: "",
-      skills: ""
-    };
 
 
     this.state = {
-      new_form_active: true,
+      new_form_active: false,
       company_name: "Just in Time Swimming",
 
-      new_listing: empty_listing,
-      listing: listing1
+      new_listing: EMPTY_LISTING,
+      listings: listings
     };
   }
 
@@ -64,8 +70,30 @@ class HomepageBIZ extends Component {
   }
 
   // publish new listing
-  publishNewListing = () => {
+  onClick_PublishNewListing = () => {
 
+    const EMPTY_LISTING = {
+      job_title: "",
+      start_time: "",
+      end_time: "",
+      date: "",
+      wage: "15.00",
+      description: "",
+      skills: "",
+      photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
+      description: "",
+    };
+
+    // fix new list
+    let newListing = this.state.new_listing;
+    let skillsList = newListing.skills.split(",");
+    newListing['skills'] = skillsList;
+    newListing['status'] = "live";
+
+    // add to other listings
+    let allListings = this.state.listings;
+    allListings.unshift({listing: newListing, workers: []});
+    this.setState({listings: allListings, new_listing: EMPTY_LISTING, new_form_active: false});
   }
 
   // Update Info ---------------------------------------------------------------
@@ -89,6 +117,7 @@ class HomepageBIZ extends Component {
           <NewJobListingForm
             listing={this.state.new_listing}
             updateNewListing={this.updateNewListing}
+            publishNewListing={this.publishNewListing}
           />
         </div>
       );
@@ -102,15 +131,48 @@ class HomepageBIZ extends Component {
 
   // command bar is at the top, major interaction keys
   renderCommandBar = () => {
+
+
+    // get right button
+    let button;
+    if (this.state.new_form_active) {
+      button = <button id="new-listing-button" onClick={this.onClick_PublishNewListing}>Publish Job</button>;
+    } else {
+      button = <button id="new-listing-button" onClick={this.onClick_ToggleNewFormActive}>New Job Listing</button>;
+    }
+
+
+    // render
     return (
       <div className="hpb-command-bar-container">
         <div>
           <h1 className="hbp-h1">{this.state.company_name}</h1>
         </div>
-        <button id="new-listing-button" onClick={this.onClick_ToggleNewFormActive}>New Job Listing</button>
+        {button}
       </div>
     );
   }
+
+
+  // renders the job listings
+  renderJobListings = () => {
+    let results = [];
+
+    for (let i = 0; i < this.state.listings.length; i++) {
+      results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
+
+      for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
+        results.push(<WorkerListing/>);
+      }
+      results.push(<div className="hpb-50px-space"></div>);
+      results.push(<div className="hpb-50px-space"></div>);
+      results.push(<div className="hpb-50px-space"></div>);
+
+    }
+
+    return results
+  }
+
 
 
   // renders <HomepageBIZ/>
@@ -131,11 +193,7 @@ class HomepageBIZ extends Component {
               {this.renderNewJobListingForm()}
 
               {/* Job listings */}
-              <JobListing listing={this.state.listing}/>
-              <div className="hpb-50px-space"></div>
-              <WorkerListing/>
-              <WorkerListing/>
-              <WorkerListing/>
+              {this.renderJobListings()}
             </div>
           </div>
 
