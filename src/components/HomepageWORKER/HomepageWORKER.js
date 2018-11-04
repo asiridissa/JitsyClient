@@ -21,7 +21,9 @@ class HomepageWORKER extends Component {
       photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
       location: "2600 Marine Way, Mountain View, Ca, 94043",
       description: "We need someone to make sure no more kids drown. ",
-      skills: ["Swimming", "Coaching", "Lifeguard Certified"]
+      skills: ["Swimming", "Coaching", "Lifeguard Certified"],
+
+      applied: false
     };
 
     let listing2 = {
@@ -36,19 +38,23 @@ class HomepageWORKER extends Component {
       photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
       location: "2600 Marine Way, Mountain View, Ca, 94043",
       description: "We need someone to make sure no more kids drown. ",
-      skills: ["Swimming", "Coaching", "Lifeguard Certified"]
+      skills: ["Swimming", "Coaching", "Lifeguard Certified"],
+
+      applied: false
     };
 
     this.state = {
-      listings: [listing1, listing2]
+      listings: [listing1, listing2, listing1, listing2, listing1]
     };
   }
 
 
   // On Click ------------------------------------------------------------------
 
-  onClick_ApplyButton = () => {
-    alert ("test");
+  onClick_ApplyButton = (index) => {
+    let listings = this.state.listings;
+    listings[index]['applied'] = true;
+    this.setState({listings: listings});
   }
 
 
@@ -65,6 +71,7 @@ class HomepageWORKER extends Component {
             listing={this.state.listings[i]}
             renderApplyButton={true}
             onClick_ApplyButton={this.onClick_ApplyButton}
+            index={i}
           />
         </div>
       );
@@ -83,7 +90,9 @@ class HomepageWORKER extends Component {
     return (
       <div className="hpw-full-container">
         <div className="hpw-column-container">
-          {this.renderListings()}
+          <div className="hpw-listing-scroll">
+            {this.renderListings()}
+          </div>
         </div>
       </div>
     );

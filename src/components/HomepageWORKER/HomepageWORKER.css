@@ -14,3 +14,10 @@
 .hpw-listing-container {
   margin-bottom: 30px;
 }
+
+
+.hpw-listing-scroll {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}

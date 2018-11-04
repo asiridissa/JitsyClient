@@ -29,11 +29,21 @@ class JobListing extends Component {
 
   renderStatusOrApplyButton = (listing) => {
     if (this.props.renderApplyButton) {
-      return (
-        <div className="jl-listing-status-container">
-          <button id="jl-listing-apply-button" onClick={this.props.onClick_ApplyButton}>Apply</button>
-        </div>
-      );
+
+      if (!this.props.listing.applied) {
+        return (
+          <div className="jl-listing-status-container">
+            <button id="jl-listing-apply-button" onClick={() => this.props.onClick_ApplyButton(this.props.index)}>Apply</button>
+          </div>
+        );
+      } else {
+        return (
+          <div className="jl-listing-status-container">
+            <h1 id="jl-listing-thanks-for-applying">Thanks for Applying!</h1>
+          </div>
+        );
+      }
+
     } else {
       return (
         <div className="jl-listing-status-container">
