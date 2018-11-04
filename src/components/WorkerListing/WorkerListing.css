@@ -1,6 +1,6 @@
 .worker-listing-container {
   width: calc(100% - 40px);
-  height: 500px;
+  height: 350px;
   margin-top: 15px;
   margin-left: 20px;
   background-color: blue;
@@ -29,3 +29,43 @@
   width: 100%;
   background-color: gray;
 }
+
+
+/* Left Half -----------------------------------------------------------------*/
+
+.wl-profile-photo-column {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.wl-profile-photo-container {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+#wl-profile-photo-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.wl-review-container {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wl-review-star {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+  color: #004961;
+}
+
+/* Right Half ----------------------------------------------------------------*/

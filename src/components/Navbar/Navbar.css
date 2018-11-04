@@ -8,6 +8,16 @@
   justify-content: space-between;
 }
 
+#nb-logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
+#nb-title-text {
+  color: white;
+  margin-left: 10px;
+}
 /* TEXT ----------------------------------------------------------------------*/
 
 .nb-h2 {
@@ -34,7 +44,7 @@
   height: 100%;
   width: auto;
   display: flex;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 20px;
   align-items: center;
 }

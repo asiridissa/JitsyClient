@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 
+// logo
+import jitsy_logo from '../../jitsy_logo.svg';
+
 class Navbar extends Component {
 
 
@@ -9,7 +12,8 @@ class Navbar extends Component {
       <div className="navbar-container">
 
         <div className="nb-side-container">
-          <h1 className="nb-h2 nb-color-white">Jitsy</h1>
+          <img id="nb-logo" src={jitsy_logo}/>
+          <h1 id="nb-title-text">Jitsy</h1>
         </div>
 
         <div className="nb-side-container">

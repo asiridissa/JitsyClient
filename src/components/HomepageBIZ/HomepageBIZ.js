@@ -61,6 +61,7 @@ class HomepageBIZ extends Component {
               <JobListing listing={this.state.listing}/>
               <WorkerListing/>
               <WorkerListing/>
+              <WorkerListing/>
             </div>
           </div>
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="309px" height="338px" viewBox="0 0 309 338" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Jitsy Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Jitsy-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(7.000000, 8.000000)" fill="#FFFFFF">
+            <g id="Group-4" transform="translate(15.000000, 0.000000)">
+                <path d="M116.025243,229 L180,229 C177.905218,276.84953 138.412194,315 89.9999992,315 C41.587804,315 2.09478013,276.84953 1.89431804e-15,229.000039 L56.1311252,229 C56.1311252,245.568542 69.4114859,259 85.9961154,259 C102.580745,259 116.025243,245.568542 116.025243,229 Z" id="Combined-Shape"></path>
+                <path d="M116,93 L180,93 L180,228 C180,232.418278 176.418278,236 172,236 L124,236 C119.581722,236 116,232.418278 116,228 L116,93 Z" id="Rectangle-4"></path>
+                <path d="M0,198 L56,198 L56,236 L8.2,236 C3.67126505,236 -2.9981036e-15,232.328735 -3.55271368e-15,227.8 L0,198 Z" id="Rectangle-4"></path>
+                <path d="M215,93 L279,93 L278.071747,299.072071 C278.03207,307.880405 270.880333,315 262.07191,315 L215,315 L215,93 Z" id="Rectangle-4"></path>
+                <path d="M182,-50 L230,-50 L230,114 L166,114 L166,-34 C166,-42.836556 173.163444,-50 182,-50 Z" id="Rectangle-4" transform="translate(198.000000, 32.000000) rotate(90.000000) translate(-198.000000, -32.000000) "></path>
+            </g>
+            <path d="M16,0 L280,0 C288.836556,-1.623249e-15 296,7.163444 296,16 L296,309 C296,317.836556 288.836556,325 280,325 L16,325 C7.163444,325 1.082166e-15,317.836556 0,309 L0,16 C-1.082166e-15,7.163444 7.163444,1.623249e-15 16,0 Z M280,64 L296,64 L296,93 L280,93 L280,310 L16,310 L16,16 L280,16 L280,64 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
