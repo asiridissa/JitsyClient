@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './HomepageBIZ.css';
 
+// componenents
+import JobListing from '../JobListing/JobListing.js';
+
+
 class HomepageBIZ extends Component {
 
   constructor() {
@@ -43,70 +47,6 @@ class HomepageBIZ extends Component {
   }
 
 
-  renderSkills = (listing) => {
-
-    //
-    let skills = [];
-    for (let i = 0; i < listing.skills.length; i++) {
-      skills.push(<div key={i} className="hpb-listing-skill">{listing.skills[i]}</div>);
-    }
-
-    return (
-      <div className="hpb-listing-skills-container">
-        {skills}
-      </div>
-    );
-  }
-
-  // renders a job listing
-  renderJobListings = () => {
-
-    let listing = this.state.listing;
-
-    return (
-      <div className="hpb-listing-container">
-
-        {/* Top bar has name of the job and when the job is scheduled for */}
-        <div className="hbp-listing-top-bar">
-          <div>
-            <h1 className="hpb-listing-h1">{listing.job_title}</h1>
-            <h3 className="hpb-listing-h3">{listing.location}</h3>
-          </div>
-          <div>
-            <div className="hpb-listing-date-group-container">
-              <h2 className="hpb-listing-date-item">{listing.date}</h2>
-              <h2 className="hpb-listing-date-item">|</h2>
-              <h2 className="hpb-listing-date-item">{listing.start_time}-{listing.end_time}</h2>
-            </div>
-            <div>
-              <h2 id="hpb-listing-wage">${listing.wage}/hr</h2>
-            </div>
-          </div>
-
-        </div>
-
-
-        {/* Description of job */}
-        <div className="hpb-listing-description-container">
-          <p>{listing.description}</p>
-        </div>
-
-        {/* Room for Required skills */}
-        <div className="hpb-listing-bottom-bar">
-          <div className="hpb-listing-bottom-bar-left-container">
-            {this.renderSkills(listing)}
-          </div>
-
-          <div className="hpb-listing-bottom-bar-right-container">
-            <div className="hpb-listing-status-container">
-              <h2 className="hpb-live-status-description">status: <span id="hpb-live-status">{listing.status}</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   // renders <HomepageBIZ/>
   render() {
     return (
@@ -116,8 +56,8 @@ class HomepageBIZ extends Component {
           {/* command bar lets you create a new posting*/}
           {this.renderCommandBar()}
 
-          {/* renders listings */}
-          {this.renderJobListings()}
+
+          <JobListing listing={this.state.listing}/>
         </div>
       </div>
     );
