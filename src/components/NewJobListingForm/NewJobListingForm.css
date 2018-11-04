@@ -1,0 +1,63 @@
+.njlf-container {
+  width: 100%;
+  min-height: 400px;
+  border-top: 1px solid #004961;
+  border-bottom: 1px solid #004961;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.njlf-h1 {
+  font-size: 2.8em;
+}
+
+
+.njlf-column {
+  width: 1000px;
+  height: 100%;
+}
+
+.njlf-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.njlf-category-title-container {
+  width: 300px;
+}
+
+.njlf-input-container {
+  width: calc(100% - 300px);
+  display: flex;
+  align-items: center;
+}
+
+
+.njlf-input {
+  width: 100%;
+  height: 70%;
+  font-size: 1.5em;
+}
+
+
+.njlf-date-container {
+  width: calc(100% - 300px);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+}
+
+.njlf-date-pair-container {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+
+.njlf-date-h2 {
+  margin-right: 10px;
+}
