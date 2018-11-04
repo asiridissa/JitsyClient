@@ -3,7 +3,7 @@ import './HomepageBIZ.css';
 
 // componenents
 import JobListing from '../JobListing/JobListing.js';
-
+import WorkerListing from '../WorkerListing/WorkerListing.js';
 
 class HomepageBIZ extends Component {
 
@@ -56,8 +56,14 @@ class HomepageBIZ extends Component {
           {/* command bar lets you create a new posting*/}
           {this.renderCommandBar()}
 
+          <div className="hpb-listings-container">
+            <div className="hpb-listings-scroll-container">
+              <JobListing listing={this.state.listing}/>
+              <WorkerListing/>
+              <WorkerListing/>
+            </div>
+          </div>
 
-          <JobListing listing={this.state.listing}/>
         </div>
       </div>
     );

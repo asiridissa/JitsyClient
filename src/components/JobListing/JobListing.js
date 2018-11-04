@@ -5,11 +5,6 @@ class JobListing extends Component {
 
   constructor() {
     super();
-
-
-    this.state = {
-      company_name: "Intuit SmallBizHack",
-    };
   }
 
 
@@ -80,7 +75,7 @@ class JobListing extends Component {
     );
   }
 
-  // renders <HomepageBIZ/>
+  // renders <JobListing/>
   render() {
     return (
       <div>

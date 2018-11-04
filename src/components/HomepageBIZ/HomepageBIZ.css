@@ -41,3 +41,19 @@
   color: #012C3B;
   font-size: 2.5em;
 }
+
+
+/* Listings ------------------------------------------------------------------*/
+
+.hpb-listings-container {
+  height: calc(100% - 150px);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hpb-listings-scroll-container {
+  height: 100%;
+  overflow-y: scroll;
+  width: 100%;
+  padding-right: 50px;
+}
