@@ -157,3 +157,21 @@
 #jl-listing-apply-button:hover {
   background-color: #107A56;
 }
+
+.jl-update-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.jl-update-button {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #1EC98E;
+  font-size: 1.3em;
+}
+
+.jl-update-button:hover {
+  background-color: #107A56;
+}

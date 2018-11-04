@@ -44,6 +44,15 @@ class JobListing extends Component {
         );
       }
 
+    } else if (listing.status === "live") {
+      return (
+        <div className="jl-listing-status-container">
+          <div className="jl-update-container">
+            <button className="jl-update-button">Update</button>
+            <h2 className="jl-live-status-description">status: <span id="jl-live-status">{listing.status}</span></h2>
+          </div>
+        </div>
+      );
     } else {
       return (
         <div className="jl-listing-status-container">
@@ -51,6 +60,7 @@ class JobListing extends Component {
         </div>
       );
     }
+
   }
 
 
