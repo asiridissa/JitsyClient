@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import './HomepageWORKER.css';
 
+import Requests from '../../network/requests.js';
+
+
 import JobListing from '../JobListing/JobListing.js';
+
+
+let requests = new Requests();
+
 
 class HomepageWORKER extends Component {
 
@@ -48,6 +55,12 @@ class HomepageWORKER extends Component {
     };
   }
 
+
+  componentDidMount() {
+    // alert("test");
+    console.log("fuck");
+    // requests.getListings();
+  }
 
   // On Click ------------------------------------------------------------------
 

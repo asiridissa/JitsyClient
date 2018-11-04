@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HomepageBIZ.css';
 
+
 // componenents
 import JobListing from '../JobListing/JobListing.js';
 import WorkerListing from '../WorkerListing/WorkerListing.js';
