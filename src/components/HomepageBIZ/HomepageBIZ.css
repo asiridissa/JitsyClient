@@ -98,3 +98,12 @@
   width: 100%;
   padding-right: 50px;
 }
+
+
+/* View Worker ---------------------------------------------------------------*/
+
+.hpb-view-worker-container {
+  height: calc(100% - 70px);
+  width: calc(100% - 10px);
+  position: absolute;
+}

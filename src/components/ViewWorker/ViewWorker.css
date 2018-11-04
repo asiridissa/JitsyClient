@@ -1,0 +1,144 @@
+#vw-exit-button {
+  height: 100px;
+  width: 100px;
+}
+
+
+.vw-full-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.vw-side-column {
+  background-color: gray;
+  opacity: 0.6;
+  flex-grow: 1;
+}
+
+.vw-top-gray {
+  background-color: gray;
+  opacity: 0.6;
+  height: 20px;
+  width: 100%;
+}
+.vw-column-container {
+  height: calc(100%);
+  width: 1400px;
+  background-color: #EDEDED;
+  flex-grow: 0;
+}
+
+
+/* Top bar --------------------------------------------------------------------*/
+
+.vw-top-bar-container {
+  height: 400px;
+  width: 100%;
+  background-color: #012C3B;
+  display: flex;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.vw-profile-photo-column {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vw-photo-container {
+  height: 330px;
+  width: 330px;
+  margin-top: 20px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#vw-photo-img {
+  width: 330px;
+  height: 330px;
+  border-radius: 5px;
+}
+
+.vw-description-column {
+  width: calc(100% - 400px);
+  height: 100%;
+}
+
+#vw-name-h1 {
+  color: #EDEDED;
+  margin: 0px;
+  margin-top: 20px;
+  font-size: 3.3em;
+}
+
+#vw-num-jobs {
+  color: #BFBFBF;
+  margin: 0px;
+}
+
+#vw-review-stars {
+  color: #1EC98E;
+}
+
+#vw-bio {
+  font-size: 1.5em;
+  font-style: italic;
+  color: #BFBFBF;
+}
+
+.vw-h2 {
+  color: #BFBFBF;
+  margin: 0px;
+  margin-bottom: 5px;
+  padding: 0px;
+}
+
+.vw-skills-container {
+  display: flex;
+  width: 100%;
+}
+
+.vw-skill {
+  color: black;
+  background-color: #1EC98E;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+
+/* Video Bar ------------------------------------------------------------------*/
+
+.vw-videobar-container {
+  height: 420px;
+  width: 100%;
+  background-color: #1C1C1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Reviews -------------------------------------------------------------------*/
+
+.vw-reviews-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vw-review-container {
+  height: 300px;
+  width: 70%;
+  border-bottom: 1px solid gray;
+}

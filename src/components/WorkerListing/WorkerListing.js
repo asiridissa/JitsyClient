@@ -13,8 +13,8 @@ class WorkerListing extends Component {
       review_score: " ★ ★ ★ ☆ ☆ ",
       profile_img: "https://avatars1.githubusercontent.com/u/12383469?s=400&v=4",
       bio: "I am a self-starting worker who is flexible and can adapt to your workplace. I have managerial experience at Carl's Jr and worked as a barista at Starbucks before that. ",
-      skills: ["skill 1", "skill 2", "skill 3", "skill 4"]
-
+      skills: ["skill 1", "skill 2", "skill 3", "skill 4"],
+      num_jobs: "15 successful jobs"
     };
 
     this.state = {
@@ -31,7 +31,7 @@ class WorkerListing extends Component {
       height: '270', // 390
       width: '550', // 640
       playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
+        autoplay: 0
       }
     };
 
@@ -76,8 +76,8 @@ class WorkerListing extends Component {
           </div>
 
           <div className="wl-profile-description-column">
-            <h1 className="wl-profile-h1">{profile.name}</h1>
-            <h2 className="wl-profile-h2">15 successful jobs</h2>
+            <h1 className="wl-profile-h1" onClick={this.props.openViewWorker}>{profile.name}</h1>
+            <h2 className="wl-profile-h2">{profile.num_jobs}</h2>
             <p className="wl-profile-bio-p">{profile.bio}</p>
             <h3 className="wl-profile-h3">Related Skills</h3>
             <div className="wl-skills-container">

@@ -13,3 +13,4 @@ Green:
 Grays:
   - #DEDEDE | Light gray
   - #EDEDED | Lighter gray
+  - #BFBFBF | Darker Gray (still light)

@@ -5,6 +5,7 @@ import './HomepageBIZ.css';
 import JobListing from '../JobListing/JobListing.js';
 import WorkerListing from '../WorkerListing/WorkerListing.js';
 import NewJobListingForm from '../NewJobListingForm/NewJobListingForm.js';
+import ViewWorker from '../ViewWorker/ViewWorker.js';
 
 const EMPTY_LISTING = {
   job_title: "",
@@ -65,6 +66,7 @@ class HomepageBIZ extends Component {
 
     this.state = {
       new_form_active: false,
+      view_worker_active: true,
       company_name: "Just in Time Swimming",
 
       new_listing: EMPTY_LISTING,
@@ -133,6 +135,17 @@ class HomepageBIZ extends Component {
     this.setState({listings: allListings, new_listing: EMPTY_LISTING, new_form_active: false});
   }
 
+
+
+  // opens view worker
+  onClick_OpenViewWorker = () => {
+    this.setState({view_worker_active: true});
+  }
+
+  // closes viewWorker
+  onClick_CloseViewWorker = () => {
+    this.setState({view_worker_active: false});
+  }
   // Update Info ---------------------------------------------------------------
 
   // updates info in new listing
@@ -207,7 +220,7 @@ class HomepageBIZ extends Component {
         results.push(<JobListing listing={this.state.listings[i]['listing']}/>);
 
         for (let j = 0; j < this.state.listings[i]['workers'].length; j++) {
-          results.push(<WorkerListing/>);
+          results.push(<WorkerListing openViewWorker={this.onClick_OpenViewWorker}/>);
         }
         results.push(<div className="hpb-50px-space"></div>);
         results.push(<div className="hpb-50px-space"></div>);
@@ -248,6 +261,20 @@ class HomepageBIZ extends Component {
     );
   }
 
+
+
+  renderViewWorker = () => {
+
+    if (this.state.view_worker_active) {
+      return (
+        <div className="hpb-view-worker-container">
+          <ViewWorker
+            closeViewWorker={this.onClick_CloseViewWorker}
+          />
+        </div>
+      );
+    }
+  }
   // renders <HomepageBIZ/>
   render() {
     return (
@@ -276,6 +303,8 @@ class HomepageBIZ extends Component {
           </div>
 
         </div>
+
+        {this.renderViewWorker()}
       </div>
     );
   }
