@@ -144,3 +144,16 @@
   padding: 0px;
   color: #E04370;
 }
+
+#jl-listing-apply-button {
+  width: 150px;
+  height: 60px;
+  background-color: #1EC98E;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+#jl-listing-apply-button:hover {
+  background-color: #107A56;
+}

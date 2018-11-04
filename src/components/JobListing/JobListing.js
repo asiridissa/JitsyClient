@@ -26,6 +26,24 @@ class JobListing extends Component {
     );
   }
 
+
+  renderStatusOrApplyButton = (listing) => {
+    if (this.props.renderApplyButton) {
+      return (
+        <div className="jl-listing-status-container">
+          <button id="jl-listing-apply-button" onClick={this.props.onClick_ApplyButton}>Apply</button>
+        </div>
+      );
+    } else {
+      return (
+        <div className="jl-listing-status-container">
+          <h2 className="jl-live-status-description">status: <span id="jl-live-status">{listing.status}</span></h2>
+        </div>
+      );
+    }
+  }
+
+
   // renders a job listing
   renderJobListings = () => {
 
@@ -66,9 +84,7 @@ class JobListing extends Component {
           </div>
 
           <div className="jl-listing-bottom-bar-right-container">
-            <div className="jl-listing-status-container">
-              <h2 className="jl-live-status-description">status: <span id="jl-live-status">{listing.status}</span></h2>
-            </div>
+            {this.renderStatusOrApplyButton(listing)}
           </div>
         </div>
       </div>

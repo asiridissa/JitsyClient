@@ -15,7 +15,7 @@ class App extends Component {
     super();
 
     this.state = {
-      business_active: true
+      business_active: false
     };
   }
 

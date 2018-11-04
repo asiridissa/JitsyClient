@@ -1,0 +1,16 @@
+.hpw-full-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hpw-column-container {
+  width: 1800px;
+  height: 100%;
+}
+
+
+.hpw-listing-container {
+  margin-bottom: 30px;
+}

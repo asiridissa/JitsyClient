@@ -66,7 +66,7 @@ class HomepageBIZ extends Component {
 
     this.state = {
       new_form_active: false,
-      view_worker_active: true,
+      view_worker_active: false,
       company_name: "Just in Time Swimming",
 
       new_listing: EMPTY_LISTING,
