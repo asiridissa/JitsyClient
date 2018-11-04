@@ -56,7 +56,7 @@ class JobListing extends Component {
 
         {/* Description of job */}
         <div className="jl-listing-description-container">
-          <p>{listing.description}</p>
+          <p className="jl-listing-description-p">{listing.description}</p>
         </div>
 
         {/* Room for Required skills */}
@@ -78,9 +78,15 @@ class JobListing extends Component {
   // renders <JobListing/>
   render() {
     return (
-      <div>
-        {this.renderJobListings()}
+      <div className="jl-full-container">
+        <div className="jl-left-half">
+          {this.renderJobListings()}
+        </div>
+        <div className="jl-right-half">
+          <img className="jl-photo-img" src={this.props.listing.photo}/>
+        </div>
       </div>
+
     );
   }
 }

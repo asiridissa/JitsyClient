@@ -12,20 +12,21 @@ class HomepageBIZ extends Component {
 
     // fake data for company job listing
     let listing1 = {
-      job_title: "Part Time Hacker",
+      job_title: "Lifeguard",
       start_time: "4:00",
       end_time: "8:30",
       date: "8/24",
       status: "live",
       wage: 15,
 
+      photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
       location: "2600 Marine Way, Mountain View, Ca, 94043",
-      description: "At this hack, your only challenge is to create a brand NEW solution that saves a small business time or money. It's that simple!",
-      skills: ["React.js Experience", "Flask Development", "Willing to fuck up the tax code for all Americans for profit"]
+      description: "We need someone to make sure no more kids drown. ",
+      skills: ["Swimming", "Coaching", "Lifeguard Certified"]
     };
 
     this.state = {
-      company_name: "Intuit SmallBizHack",
+      company_name: "Just in Time Swimming",
 
       listing: listing1
     };
