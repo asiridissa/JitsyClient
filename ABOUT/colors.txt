@@ -1,0 +1,15 @@
+
+Blues:
+  - #004961 | dark blue
+  - #012C3B | Darkest blue (for details)
+  - #0695C4 | brightish medium blue
+  - #78D6F5 | bright blue
+
+Green:
+  - #1EC98E | blue-green
+  - #107A56 | darker blue-green
+
+
+Grays:
+  - #DEDEDE | Light gray
+  - #EDEDED | Lighter gray

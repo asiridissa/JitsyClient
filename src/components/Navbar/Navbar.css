@@ -1,0 +1,40 @@
+.navbar-container {
+  height: 63px;
+  width: 100%;
+  background-color: #004961;
+  border-bottom: 2px solid #012C3B;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TEXT ----------------------------------------------------------------------*/
+
+.nb-h2 {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #DEDEDE;
+  margin-right: 10px;
+}
+
+.nb-color-white {
+  color: white;
+}
+
+.nb-h2:hover {
+  color: #78D6F5;
+}
+
+
+/* Titles ------------------------------------------------------------------- */
+
+/* container that groups titles to either the left or right sides of navbar*/
+.nb-side-container {
+  height: 100%;
+  width: auto;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+}

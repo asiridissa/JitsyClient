@@ -1,0 +1,117 @@
+.homepage-biz-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hpb-column-container {
+  width: 1400px;
+  height: 100%;
+}
+
+
+/* Command Bar ---------------------------------------------------------------*/
+
+
+.hpb-command-bar-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#new-listing-button {
+  width: 250px;
+  height: 80px;
+  background-color: #1EC98E;
+  border: 0px;
+  border-radius: 5px;
+  margin: 0px;
+  font-size: 1.4em;
+  color: white;
+}
+
+#new-listing-button:hover {
+  background-color: #09B579;
+}
+
+.hbp-h1 {
+  color: #012C3B;
+  font-size: 2.5em;
+}
+
+
+/* Listing  ------------------------------------------------------------------*/
+
+
+.hpb-listing-h1 {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.hpb-listing-h3 {
+  margin: 0px;
+  padding: 0px;
+}
+
+#hpb-listing-wage {
+  text-align: right;
+  color: #107A56;
+  font-size: 1.5em;
+  margin: 0px;
+}
+
+
+.hpb-listing-container {
+  width: 100%;
+  background-color: #EDEDED;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px #969696;
+}
+
+.hbp-listing-top-bar {
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hpb-listing-date-group-container {
+  display: flex;
+}
+
+.hpb-listing-date-item {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.hpb-listing-description-container {
+  width: calc(100% - 60px);
+  height: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.2em;
+}
+
+.hpb-listing-skills-container {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.hpb-listing-skill {
+  background-color: #004961;
+  color: white;
+  border-radius: 5px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  min-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 50px;
+}
