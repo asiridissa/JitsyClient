@@ -12,10 +12,12 @@ class HomepageBIZ extends Component {
       start_time: "4:00",
       end_time: "8:30",
       date: "8/24",
+      status: "live",
+      wage: 15,
 
       location: "2600 Marine Way, Mountain View, Ca, 94043",
       description: "At this hack, your only challenge is to create a brand NEW solution that saves a small business time or money. It's that simple!",
-      skills: ["React.js Experience", "Flask Development", "Fuck up the tax code for all Americans"]
+      skills: ["React.js Experience", "Flask Development", "Willing to fuck up the tax code for all Americans for profit"]
     };
 
     this.state = {
@@ -77,7 +79,7 @@ class HomepageBIZ extends Component {
               <h2 className="hpb-listing-date-item">{listing.start_time}-{listing.end_time}</h2>
             </div>
             <div>
-              <h2 id="hpb-listing-wage">$15</h2>
+              <h2 id="hpb-listing-wage">${listing.wage}/hr</h2>
             </div>
           </div>
 
@@ -90,8 +92,17 @@ class HomepageBIZ extends Component {
         </div>
 
         {/* Room for Required skills */}
-        {this.renderSkills(listing)}
+        <div className="hpb-listing-bottom-bar">
+          <div className="hpb-listing-bottom-bar-left-container">
+            {this.renderSkills(listing)}
+          </div>
 
+          <div className="hpb-listing-bottom-bar-right-container">
+            <div className="hpb-listing-status-container">
+              <h2 className="hpb-live-status-description">status: <span id="hpb-live-status">{listing.status}</span></h2>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
