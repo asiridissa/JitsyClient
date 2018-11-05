@@ -17,18 +17,18 @@ class HomepageWORKER extends Component {
     super();
 
     let listing1 = {
-      job_title: "Lifeguard",
-      company_name: "Just in Time Swimming",
-      start_time: "4:00",
-      end_time: "8:30",
-      date: "8/24",
+      job_title: "Swimming Instructor",
+      company_name: "Swim School",
+      start_time: "3:00 PM",
+      end_time: "5:00 PM",
+      date: "11/7",
       status: "live",
       wage: 15,
 
       photo: "https://st.depositphotos.com/1000647/2519/i/950/depositphotos_25199049-stock-photo-swimming-pool.jpg",
       location: "2600 Marine Way, Mountain View, Ca, 94043",
-      description: "We need someone to make sure no more kids drown. ",
-      skills: ["Swimming", "Coaching", "Lifeguard Certified"],
+      description: "We need a part time worker in order to cover a shift! Has to be good with kids ",
+      skills: ["Swimming", "Coaching", "Lifeguard Certified", "good with children"],
 
       applied: false
     };
